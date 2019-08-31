@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>darkxinyu</title>
+    <link>https://blog.darkxinyu.dev/</link>
+    <description>Recent content on darkxinyu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 31 Aug 2019 14:26:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.darkxinyu.dev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://blog.darkxinyu.dev/about/</link>
+      <pubDate>Thu, 29 Aug 2019 15:38:52 +0800</pubDate>
+      
+      <guid>https://blog.darkxinyu.dev/about/</guid>
+      <description>这家伙很懒，什么都没有留下 ╮(￣▽￣)╭</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://blog.darkxinyu.dev/post/hello-world/</link>
+      <pubDate>Sat, 31 Aug 2019 14:26:46 +0800</pubDate>
+      
+      <guid>https://blog.darkxinyu.dev/post/hello-world/</guid>
+      <description> Hello World (￣３￣)a </description>
+    </item>
+    
+  </channel>
+</rss>
