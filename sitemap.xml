@@ -9,7 +9,28 @@
   </url>
   
   <url>
+    <loc>https://blog.darkxinyu.dev/categories/</loc>
+    <lastmod>2019-08-31T15:02:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.darkxinyu.dev/</loc>
+    <lastmod>2019-08-31T15:02:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.darkxinyu.dev/tags/ionic/</loc>
+    <lastmod>2019-08-31T15:02:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.darkxinyu.dev/tags/ionic-4/</loc>
     <lastmod>2019-08-31T15:02:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -30,20 +51,22 @@
   </url>
   
   <url>
+    <loc>https://blog.darkxinyu.dev/tags/</loc>
+    <lastmod>2019-08-31T15:02:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.darkxinyu.dev/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2019-08-31T15:02:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.darkxinyu.dev/post/hello-world/</loc>
     <lastmod>2019-08-31T14:26:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.darkxinyu.dev/categories/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.darkxinyu.dev/tags/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
