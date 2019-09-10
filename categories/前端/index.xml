@@ -6,10 +6,19 @@
     <description>Recent content in 前端 on darkxinyu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 31 Aug 2019 15:02:38 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Sep 2019 11:14:33 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.darkxinyu.dev/categories/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>0.5px边框</title>
+      <link>https://blog.darkxinyu.dev/post/half-pixel-border/</link>
+      <pubDate>Tue, 10 Sep 2019 11:14:33 +0800</pubDate>
+      
+      <guid>https://blog.darkxinyu.dev/post/half-pixel-border/</guid>
+      <description>关于1px、0.5px网上很多文章都讨论过了，就不在这里展开了，个人用过好几种方案，貌似就这种兼容性等各方面都比较合适，废话不多说直接上代码</description>
+    </item>
     
     <item>
       <title>Ionic4中的Slides组件Pager样式定制</title>
