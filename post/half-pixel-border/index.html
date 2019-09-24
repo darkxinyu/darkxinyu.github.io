@@ -50,7 +50,7 @@
 
 <meta itemprop="datePublished" content="2019-09-10T11:14:33&#43;08:00" />
 <meta itemprop="dateModified" content="2019-09-10T11:14:33&#43;08:00" />
-<meta itemprop="wordCount" content="469">
+<meta itemprop="wordCount" content="742">
 
 
 
@@ -131,8 +131,8 @@
         <div class="post-category">
             <a href="/categories/%E5%89%8D%E7%AB%AF/"> 前端 </a>
             </div>
-          <span class="more-meta"> 469 words </span>
-          <span class="more-meta"> 1 min read </span>
+          <span class="more-meta"> 742 words </span>
+          <span class="more-meta"> 2 mins read </span>
         
       </div>
     </header>
@@ -287,6 +287,61 @@
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
+<p>2019-09-24更新：</p>
+
+<p>上述方法在iOS10上会出现元素无法触发点击事件的问题，网上也提到一些通过额外增加元素的方法来解决，但会破坏封装需要在业务层逐条修改，通过评估，目前对项目影响较大的还是iOS10的问题，最后决定通过媒体查询来判断当前平台，iOS直接使用小数点单位的宽度，到目前为止能够满足需求。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="c1">// 非iOS系统采用伪元素的方法实现0.5px
+</span><span class="c1"></span><span class="k">@supports</span> <span class="nt">not</span> <span class="o">(</span><span class="nt">-webkit-overflow-scrolling</span><span class="nd">:</span> <span class="nt">touch</span><span class="o">)</span> <span class="p">{</span>
+  <span class="c1">// 上述方案
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="c1">// iOS系统直接使用小数点px
+</span><span class="c1"></span><span class="k">@supports</span> <span class="o">(</span><span class="nt">-webkit-overflow-scrolling</span><span class="nd">:</span> <span class="nt">touch</span><span class="o">)</span> <span class="p">{</span>
+  <span class="k">@if</span> <span class="nv">$direction</span> <span class="o">==</span> <span class="no">all</span> <span class="p">{</span>
+    <span class="nt">border</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.5px</span> <span class="err">$</span><span class="nt">type</span> <span class="err">$</span><span class="nt">color</span><span class="o">;</span>
+  <span class="p">}</span> <span class="k">@else</span> <span class="p">{</span>
+    <span class="nt">border</span><span class="nd">:</span> <span class="nt">0</span><span class="o">;</span>
+    <span class="nt">border-</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">direction</span><span class="p">}</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.5px</span> <span class="err">$</span><span class="nt">type</span> <span class="err">$</span><span class="nt">color</span><span class="o">;</span>
+  <span class="p">}</span>
+
+  <span class="k">@media</span> <span class="p">(</span><span class="o">-</span><span class="n">webkit-min-device-pixel-ratio</span><span class="o">:</span> <span class="mi">3</span><span class="p">)</span><span class="o">,</span> <span class="p">(</span><span class="n">min-device-pixel-ratio</span><span class="o">:</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">@if</span> <span class="nv">$direction</span> <span class="o">==</span> <span class="no">all</span> <span class="p">{</span>
+      <span class="nt">border</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.33px</span> <span class="err">$</span><span class="nt">type</span> <span class="err">$</span><span class="nt">color</span><span class="o">;</span>
+    <span class="p">}</span> <span class="k">@else</span> <span class="p">{</span>
+      <span class="nt">border</span><span class="nd">:</span> <span class="nt">0</span><span class="o">;</span>
+      <span class="nt">border-</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">direction</span><span class="p">}</span><span class="nd">:</span> <span class="nt">0</span><span class="nc">.33px</span> <span class="err">$</span><span class="nt">type</span> <span class="err">$</span><span class="nt">color</span><span class="o">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
@@ -310,7 +365,11 @@
 <footer class="post-footer">
       
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/ionic-deeplink-plugin-alipay-wechat/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">iOS端使用IonicDeeplinkPlugin插件后微信、支付宝分享支付后跳回APP无法接收结果问题的处理</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/ionic4-slides-pager-customization/">
             <span class="next-text nav-default">Ionic4中的Slides组件Pager样式定制</span>
             <span class="next-text nav-mobile">Next</span>

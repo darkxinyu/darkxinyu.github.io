@@ -9,6 +9,69 @@
   </url>
   
   <url>
+    <loc>https://blog.darkxinyu.dev/categories/</loc>
+    <lastmod>2019-09-24T17:09:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.darkxinyu.dev/tags/cordova/</loc>
+    <lastmod>2019-09-24T17:09:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.darkxinyu.dev/</loc>
+    <lastmod>2019-09-24T17:09:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.darkxinyu.dev/tags/ionic/</loc>
+    <lastmod>2019-09-24T17:09:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.darkxinyu.dev/tags/ionic-4/</loc>
+    <lastmod>2019-09-24T17:09:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.darkxinyu.dev/post/ionic-deeplink-plugin-alipay-wechat/</loc>
+    <lastmod>2019-09-24T17:09:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.darkxinyu.dev/post/</loc>
+    <lastmod>2019-09-24T17:09:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.darkxinyu.dev/tags/</loc>
+    <lastmod>2019-09-24T17:09:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.darkxinyu.dev/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2019-09-24T17:09:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.darkxinyu.dev/post/half-pixel-border/</loc>
     <lastmod>2019-09-10T11:14:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -16,56 +79,7 @@
   </url>
   
   <url>
-    <loc>https://blog.darkxinyu.dev/categories/</loc>
-    <lastmod>2019-09-10T11:14:33+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.darkxinyu.dev/</loc>
-    <lastmod>2019-09-10T11:14:33+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.darkxinyu.dev/post/</loc>
-    <lastmod>2019-09-10T11:14:33+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.darkxinyu.dev/categories/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2019-09-10T11:14:33+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.darkxinyu.dev/tags/ionic/</loc>
-    <lastmod>2019-08-31T15:02:38+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.darkxinyu.dev/tags/ionic-4/</loc>
-    <lastmod>2019-08-31T15:02:38+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.darkxinyu.dev/post/ionic4-slides-pager-customization/</loc>
-    <lastmod>2019-08-31T15:02:38+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.darkxinyu.dev/tags/</loc>
     <lastmod>2019-08-31T15:02:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

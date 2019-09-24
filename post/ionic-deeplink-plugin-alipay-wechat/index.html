@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>iOS端使用IonicDeeplinkPlugin插件后微信、支付宝分享支付后跳回APP无法接收结果问题的处理 - darkxinyu</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="darkxinyu" /><meta name="description" content="本人使用的是 cordova-plugin-alipay-v2和cordova-plugin-wechat-v3两款插件，其他类似插件如果有同" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.1 with theme even" />
+
+
+<link rel="canonical" href="https://blog.darkxinyu.dev/post/ionic-deeplink-plugin-alipay-wechat/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="iOS端使用IonicDeeplinkPlugin插件后微信、支付宝分享支付后跳回APP无法接收结果问题的处理" />
+<meta property="og:description" content="本人使用的是 cordova-plugin-alipay-v2和cordova-plugin-wechat-v3两款插件，其他类似插件如果有同" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.darkxinyu.dev/post/ionic-deeplink-plugin-alipay-wechat/" />
+<meta property="article:published_time" content="2019-09-24T17:09:03+08:00" />
+<meta property="article:modified_time" content="2019-09-24T17:09:03+08:00" />
+<meta itemprop="name" content="iOS端使用IonicDeeplinkPlugin插件后微信、支付宝分享支付后跳回APP无法接收结果问题的处理">
+<meta itemprop="description" content="本人使用的是 cordova-plugin-alipay-v2和cordova-plugin-wechat-v3两款插件，其他类似插件如果有同">
+
+
+<meta itemprop="datePublished" content="2019-09-24T17:09:03&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-24T17:09:03&#43;08:00" />
+<meta itemprop="wordCount" content="453">
+
+
+
+<meta itemprop="keywords" content="ionic,ionic 4,cordova," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="iOS端使用IonicDeeplinkPlugin插件后微信、支付宝分享支付后跳回APP无法接收结果问题的处理"/>
+<meta name="twitter:description" content="本人使用的是 cordova-plugin-alipay-v2和cordova-plugin-wechat-v3两款插件，其他类似插件如果有同"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">darkxinyu</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">darkxinyu</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">iOS端使用IonicDeeplinkPlugin插件后微信、支付宝分享支付后跳回APP无法接收结果问题的处理</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-09-24 Tue </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF/"> 前端 </a>
+            </div>
+          <span class="more-meta"> 453 words </span>
+          <span class="more-meta"> 1 min read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>本人使用的是 <code>cordova-plugin-alipay-v2</code>和<code>cordova-plugin-wechat-v3</code>两款插件，其他类似插件如果有同样问题的处理思路是一样的，因为<code>IonicDeepLink</code>插件在遇到不是自己注册的url_scheme时会发出<code>CDVPluginHandleOpenURLWithAppSourceAndAnnotationNotification</code>这个通知而不是原来的<code>CDVPluginHandleOpenURL</code>，所以需要在其他插件中实现处理该通知的方法即可。</p>
+
+<p>对于<code>cordova-plugin-alipay-v2</code>来说，需要修改<code>alipay.m</code>，而<code>cordova-plugin-wechat-v3</code>则是<code>CDVWechat.m</code>文件。</p>
+
+<p>在原来的<code>handleOpenURL</code>方法之下添加一个<code>handleOpenURLWithApplicationSourceAndAnnotation</code>方法；</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-objc" data-lang="objc"><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">handleOpenURLWithApplicationSourceAndAnnotation:</span><span class="p">(</span><span class="n">NSNotification</span> <span class="o">*</span><span class="p">)</span><span class="nv">notification</span>
+<span class="p">{</span>
+    <span class="n">NSURL</span><span class="o">*</span> <span class="n">url</span> <span class="o">=</span> <span class="p">[[</span><span class="n">notification</span> <span class="n">object</span><span class="p">]</span> <span class="nl">objectForKey</span><span class="p">:</span><span class="s">@&#34;url&#34;</span><span class="p">];</span>
+  
+    <span class="c1">// 插件原处理逻辑，可复制插件原`handleOpenURL`方法中的相关代码
+</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">darkxinyu</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-09-24 Tue
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" target="_blank">Creative Commons Attribution-ShareAlike License</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ionic/">ionic</a>
+          <a href="/tags/ionic-4/">ionic 4</a>
+          <a href="/tags/cordova/">cordova</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/half-pixel-border/">
+            <span class="next-text nav-default">0.5px边框</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="darkxinyu/darkxinyu.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:darkxinyu@darkxinyu.dev" class="iconfont icon-email" title="email"></a>
+  <a href="https://blog.darkxinyu.dev/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">darkxinyu</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
